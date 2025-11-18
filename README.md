@@ -1,10 +1,13 @@
-### Challenge
-📊 Desafio para Ciências de Dados - Projeto de Análise das Lojas — Alura Store
+# Challenge 📊 
 
+## Desafio para Ciências de Dados - Projeto de Análise das Lojas — Alura Store
+---
 
 ### 🏪 Comparação entre 4 Lojas  
-Este projeto realiza uma análise completa de desempenho das quatro lojas da Alura Store, com base em dados fictícios de vendas.  
-O objetivo é ajudar o **Sr. João** a decidir **qual loja deve ser vendida**. Para isso, analisamos indicadores como:
+Este projeto apresenta uma análise completa de desempenho das quatro lojas da Alura Store, utilizando dados fictícios de vendas (um arquivo de base de dados .CSV por loja).
+O objetivo é orientar o Sr. João na decisão estratégica sobre qual unidade deverá ser vendida para viabilizar um novo empreendimento.
+
+Para isso, foi avaliado um conjunto de indicadores-chave que refletem eficiência comercial, satisfação do cliente e desempenho operacional, incluindo:
 
 💰 Faturamento
 
@@ -20,138 +23,119 @@ O objetivo é ajudar o **Sr. João** a decidir **qual loja deve ser vendida**. P
 
 🧮 Cálculo de Score de desempenho relativo
 
----
 
-# 🚀 Requisitos
-- Analisar os dados das lojas
-- Criar gráficos para visualização
-- Apresentar uma recomendação
+Essa análise integrada permite identificar, de forma objetiva, qual loja apresenta menor eficiência e é a melhor candidata para ser vendida.
 
 ---
 
+### 📘 Aprendizagem
 
-# 📂 Estrutura da base de dados
-  As quatro lojas possuem dados padronizados com as colunas:
-- Produto
-- Categoria do Produto
-- Preço
-- Frete
-- Data da Compra
-- Vendedor
-- Local da compra
-- Avaliação da compra
-- Tipo de pagamento
-- Quantidade de parcelas
-- lat
-- lon
+Este projeto também serve como prática dos principais conceitos de Ciência de Dados com Python, incluindo:
 
+🐍 Manipulação de dados com Pandas
+
+📊 Criação de visualizações utilizando Matplotlib
+
+📑 Carregamento, limpeza e tratamento de arquivos CSV
+
+📈 Análise de métricas essenciais, como faturamento, avaliações, desempenho operacional e categorias mais vendidas
+
+🔍 Interpretação de resultados para apoiar decisões de negócio
 
 ---
 
-## 📊 3. Análises Realizadas
+### 🚀 Requisitos do Desafio
 
-### 🔸 **Faturamento por loja**
-Calculado com base em:
+Para concluir a análise, foi necessário:
 
-### 🔸 **Avaliação Média dos Clientes**
-Escala de 1 a 5 ⭐.
+📥 Carregar e analisar os datasets das quatro lojas
 
-### 🔸 **Frete Médio**
-Avaliação comparativa da eficiência logística.
+📊 Produzir gráficos para apoiar a interpretação visual dos dados
 
-### 🔸 **Produtos mais vendidos**
-Top 5 por loja.
+🧠 Gerar insights baseados em métricas de desempenho
 
-### 🔸 **Categorias mais lucrativas**
-Faturamento por categoria.
-
-### 🎨 **Visualizações criadas**
-- 📌 Gráfico de barras → Faturamento  
-- 📌 Gráfico de pizza → Categorias  
-- 📌 Gráfico de dispersão → Preço × Avaliação  
-- 📌 Boxplot de frete (extra)
+📝 Apresentar uma recomendação final para o Sr. João sobre qual loja vender
 
 ---
 
-## 🧮 4. O que é o *Score_ruim*?  
-*(Mais alto = pior desempenho)*
+### 📂 Estrutura da Base de Dados
 
-O **Score_ruim** combina 3 fatores:
+Cada uma das quatro lojas possui um dataset padronizado com as seguintes colunas:
 
-### ➤ 📉 1. Faturamento Relativo
-Score_Faturamento = (Faturamento_max - Faturamento_loja) / Faturamento_max
-
-
-### ➤ ⭐ 2. Avaliação Média Relativa
-Score_Avaliação = (Avaliação_max - Avaliação_loja) / Avaliação_max
-
-
-### ➤ 🚚 3. Frete Médio Relativo
-Score_Frete = Frete_loja / Frete_max
-
-
-### 🧩 Score Final
-Score_ruim = Score_Faturamento + Score_Avaliação + Score_Frete
-
-
-Quanto **maior**, pior o desempenho.
+* Produto
+* Categoria do Produto
+* Preço
+* Frete
+* Data da Compra
+* Vendedor
+* Local da compra
+* Avaliação da compra
+* Tipo de pagamento
+* Quantidade de parcelas
+* lat (latitude)
+* lon (longitude)
 
 ---
 
-## 📝 5. Ranking do Score_ruim
+### 📊 Análises Realizadas
 
-| Loja | Score_ruim | Interpretação |
-|------|------------|----------------|
-| 🟥 Loja 1 | **1.017** | 🚨 Pior desempenho geral |
-| 🟧 Loja 4 | 1.012 | Faturamento menor, mas avaliação um pouco melhor |
-| 🟨 Loja 2 | 1.002 | Desempenho equilibrado |
-| 🟩 Loja 3 | 0.999 | Melhor eficiência geral |
+O projeto explora cada loja a partir de indicadores essenciais de desempenho comercial e operacional:
 
----
+#### 🔸 Faturamento por Loja
 
-## 🧠 6. Por que a Loja 1 é a pior, mesmo com maior faturamento?
+Cálculo da receita total para identificar quais unidades geram maior retorno financeiro.
 
-✔️ Ela possui:  
-- ⭐ **Menor avaliação média** (3.98)  
-- 🚚 **Maior frete médio** (34.69)
+#### 🔸 Avaliação Média dos Clientes
 
-Esses dois fatores **pesam muito negativamente**, mesmo com faturamento alto.
+Média das avaliações na escala de 1 a 5 estrelas, refletindo a satisfação dos consumidores.
 
-### ✔️ O faturamento pode estar mascarando problemas:
-- Insatisfação do cliente  
-- Logística cara  
-- Operação pouco eficiente  
+#### 🔸 Frete Médio
 
-### ✔️ E a diferença pequena de avaliação em relação à Loja 4?
-Mesmo que pequena, **a Loja 4 tem frete menor**, e isso melhora seu score relativo.
+Comparação direta do custo logístico entre as lojas para avaliar eficiência e competitividade.
+
+#### 🔸 Produtos Mais Vendidos
+
+Ranking dos Top 5 produtos de cada loja, revelando preferências e padrões de consumo.
+
+#### 🔸 Categorias Mais Lucrativas
+
+Análise do faturamento segmentado por categoria para identificar os nichos mais fortes.
 
 ---
 
-## 🛑 7. Recomendação Final — Qual loja vender?
+### 🎨 Visualizações Criadas
 
-# 👉 **O Sr. João deve vender a Loja 1.**
+Para apoiar a interpretação dos dados, foram produzidas diferentes visualizações:
 
-### 🧨 Motivos principais:
-1️⃣ **Maior Score_ruim entre todas** (pior desempenho relativo)  
-2️⃣ **Avaliação mais baixa dos clientes**  
-3️⃣ **Frete médio mais alto**  
-4️⃣ **Faturamento alto, mas com baixa eficiência**  
-5️⃣ **Demais lojas possuem desempenho mais equilibrado**
+📊 Gráfico de Barras — Comparação de faturamento entre as lojas
+![Gráfico - Média das avalações](assets/media_avaliacaoo.png)
+
+🥧 Gráfico de Pizza — Distribuição de vendas por categoria
+
+🔵 Gráfico de Dispersão — Relação entre Preço × Avaliação
+
+📦 Boxplot de Frete (extra) — Avaliação da variação e consistência do frete
 
 ---
 
+### 🧠 Como funciona o Score_ruim?
 
-# 🧠 Como funciona o *Score_ruim*?
+O **Score_ruim** é uma métrica criada para identificar, de forma simples e objetiva, qual loja apresenta o pior desempenho relativo.
 
-O **Score_ruim** é uma métrica criada para identificar a loja com o pior desempenho relativo.  
-Ele combina três indicadores principais:  
-✔ Faturamento  
-✔ Avaliação média  
-✔ Frete médio  
+Ele combina três fatores essenciais do negócio:
 
-Quanto **maior** o Score_ruim, **pior** a loja está se saindo no geral.
+### 💰 Faturamento
+
+### ⭐ Avaliação média dos clientes
+
+### 🚚 Frete médio
+
+Quanto **maior** o Score_ruim, **pior** é o desempenho geral.
+
 
 ### 🧮 Fórmula
+O cálculo é feito padronizando cada métrica e somando seus “pesos negativos”:
+
 - **Faturamento ruim** = (Faturamento_Máx - Faturamento_Loja) / Faturamento_Máx  
 - **Avaliação ruim** = (Avaliação_Máx - Avaliação_Loja) / Avaliação_Máx  
 - **Frete ruim** = Frete_Loja / Frete_Máx  
@@ -159,28 +143,33 @@ Quanto **maior** o Score_ruim, **pior** a loja está se saindo no geral.
 
 ---
 
-# 📉 Interpretação dos Scores
+### 📉 Interpretação dos Scores
 
 | Loja | Score_ruim | Interpretação |
 |------|------------|--------------|
 | **Loja 1** | **1.018** | 📉 *Pior desempenho relativo* |
-| **Loja 4** | **1.012** | ⚠ Próxima da pior |
-| **Loja 2** | **1.002** | 👍 Desempenho saudável |
+| **Loja 4** | **1.012** | ⚠ Operação fraca, mas com frete menor |
+| **Loja 2** | **1.002** | 👍 Desempenho saudável e equilibrado |
 | **Loja 3** | **0.999** | 🟢 Melhor desempenho |
 
 ---
 
-# 🏁 📌 **Recomendação Final — Qual loja vender?**
+### 🏁 📌 **Recomendação Final — Qual loja vender?**
 
 Depois da análise aprofundada:
+Recomenda-se que o Sr. João venda a Loja 1. Mesmo que ela tenha o maior faturamento, isso não significa saúde operacional.
+O Score_ruim revela problemas importantes:
 
 ### 🔥 **A Loja 1 é a pior no desempenho relativo e recomenda-se ser vendida.**
 
 Mesmo com alto faturamento, ela apresenta:
-- ⭐ **Menor avaliação média (3.98)**  
-- 🚚 **Frete médio mais alto entre as lojas (34.69)**  
-- ⚠ Problemas aparentes de operação e satisfação  
-- 💸 Ineficiências que não acompanham o volume de vendas  
+1. ⭐ Menor avaliação média entre as lojas (3.98)
+2. 🚚 Maior frete médio (34.69)
+3. 💸 Alto faturamento, mas com ineficiência operacional
+4. 😟 Sinais claros de insatisfação dos clientes
+5. 📉 Desempenho relativo que não se sustenta no longo prazo
+
+A diferença pequena de avaliação em relação à Loja 4 não compensa o frete muito mais alto — isso puxa o score para baixo de maneira decisiva.
 
 A pequena diferença de avaliação entre Loja 1 e Loja 4 **não** é suficiente para salvá-la:  
 ➡ A combinação de *menor avaliação + maior frete* a torna a mais problemática no conjunto geral.
@@ -199,7 +188,8 @@ A pequena diferença de avaliação entre Loja 1 e Loja 4 **não** é suficiente
 - Python 🐍  
 - Pandas  
 - Matplotlib  
-- Jupyter Notebook  
+- Jupyter Notebook
+- Google Colab  
 
 ---
 
