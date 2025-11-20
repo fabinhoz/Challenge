@@ -86,7 +86,9 @@ challenge-alura/
 ├── assets/
 │   ├── faturamento_total_por_loja.png
 │   ├── faturamento_x_avaliacao_media.png
+│   ├── frete_medio.png
 │   ├── media_avaliacao.png
+│   ├── qtde_vendas_por_categoria.png
 │   ├── top3_categorias_menos_vendidas_todas_lojas.png
 │   └── top5_categorias_mais_vendidas_todas_lojas.png
 │
@@ -131,9 +133,9 @@ Média das avaliações na escala de 1 a 5 estrelas, refletindo a satisfação d
 
 Comparação direta do custo logístico entre as lojas para avaliar eficiência e competitividade.
 
-#### 🔸 Produtos Mais Vendidos
+#### 🔸 Produtos Mais e menos Vendidos
 
-Ranking dos Top 5 produtos de cada loja, revelando preferências e padrões de consumo.
+Ranking dos Top 5 produtos mais e menos vendidos de cada loja, revelando preferências e padrões de consumo.
 
 #### 🔸 Categorias Mais Lucrativas
 
@@ -149,13 +151,19 @@ Para apoiar a interpretação dos dados, foram produzidas diferentes gráficos:
 ![Gráfico - Faturamento](assets/faturamento_total_por_loja.png)
 
 
-![Gráfico - Média das avalações](assets/media_avaliacao.png)
+![Gráfico - Qtde vendas por categoria](assets/qtde_vendas_por_categoria.png)
 
 
 ![Gráfico - Top 5 vendas por categoria mais vendidas](assets/top5_categorias_mais_vendidas_todas_lojas.png)
 
 
 ![Gráfico - As 3 vendas por categoria menos vendidas](assets/top3_categorias_menos_vendidas_todas_lojas.png)
+
+
+![Gráfico - Média das avalações](assets/media_avaliacao.png)
+
+
+![Gráfico - Frete Médio](assets/frete_medio.png)
 
 
 ![Gráfico - Preco_x_avaliacao](assets/faturamento_x_avaliacao_media.png)
@@ -166,7 +174,7 @@ Para apoiar a interpretação dos dados, foram produzidas diferentes gráficos:
 
 O **Score_ruim** é uma métrica criada para identificar, de forma simples e objetiva, qual loja apresenta o pior desempenho relativo.
 
-Ele combina três fatores essenciais do negócio:
+Ele combina três fatores essenciais do negócio ao invés de analisar apenas cada métrica individualmente:
 
 ### 💰 Faturamento
 
@@ -198,9 +206,11 @@ O cálculo é feito padronizando cada métrica e somando seus “pesos negativos
 
 ---
 
+## Conclusão
+
 ### 🏁 📌 **Recomendação Final — Qual loja vender?**
 
-Depois da análise aprofundada:
+Depois das análises:
 Recomenda-se que o Sr. João venda a Loja 1. Mesmo que ela tenha o maior faturamento, isso não significa saúde operacional.
 O Score_ruim revela problemas importantes:
 
@@ -213,9 +223,7 @@ Mesmo com alto faturamento, ela apresenta:
 4. 😟 Sinais claros de insatisfação dos clientes
 5. 📉 Desempenho relativo que não se sustenta no longo prazo
 
-A diferença pequena de avaliação em relação à Loja 4 não compensa o frete muito mais alto — isso puxa o score para baixo de maneira decisiva.
 
-A pequena diferença de avaliação entre Loja 1 e Loja 4 **não** é suficiente para salvá-la:  
 ➡ A combinação de *menor avaliação + maior frete* a torna a mais problemática no conjunto geral.
 
 ---
